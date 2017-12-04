@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    border: 0;
+    font-family: "Bungee", cursive;
+}
+
+#left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s; /* Safari */
+}
+#right {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #FFF;
+
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s; /* Safari */
+}
+
+#letters {
+    text-align: center;
+}
+
+#textLeft {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+}
+#textRight {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+}
+
+.letterContainer {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.letterGap {
+    width: 100%;
+    height: 5px;
+}
+.verticalSpace {
+    width: 100%;
+    height: 80px;
+}
+
+/*!
+ * HalfStyle
+ * Copyright 2014 Arbel Hakopian
+ * Licensed under MIT (https://github.com/arbelh/HalfStyle/blob/master/license.md)
+ */
+.letter {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    cursor: pointer;
+
+    font-size: 80px;
+    text-align: center;
+
+    color: #000;
+
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+}
+.letter::before {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    pointer-events: none; /* so the base char is selectable by mouse */
+    overflow: hidden;
+
+    color: #FFF;
+    
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+}
+
+.letter.black::before {
+    color: #000;
+
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+}
+
+.textLetterLine {
+    width: 100%;
+    height: 100px; /* letterContainer height */
+}
+
+.textLeftContainer {
+    height: 100%;
+    float: right;
+    margin-right: 50px; /* half of letterContainer width */
+    text-align: right;
+    cursor: default;
+
+    /* same as .letter */
+    font-size: 80px;
+    
+    color: #000;
+
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+}
+.textRightContainer {
+    height: 100%;
+    float: left;
+    margin-left: 50px; /* half of letterContainer width */
+    text-align: left;
+    cursor: default;
+
+    /* same as .letter */
+    font-size: 80px;
+
+    color: #FFF;
+    
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+}
